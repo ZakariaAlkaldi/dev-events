@@ -13,7 +13,7 @@ type props = {
 const EventCard = ({ title, image, slug, location, date, time }: props) => {
   return (
     <Link href={`/event/${slug}`} id="event-card">
-      <img
+      <Image
         src={image}
         alt={title}
         width={410}

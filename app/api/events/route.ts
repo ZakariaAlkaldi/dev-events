@@ -1,7 +1,7 @@
 import connectDB from "@/lib/mongodb";
 import ImageKit from "imagekit";
 import { NextResponse } from "next/server";
-import Event from "@/database/event.model";
+import Event from "@/app/database/event.model";
 
 const imagekit = new ImageKit({
   publicKey: process.env.IMAGEKIT_PUBLIC_KEY!,

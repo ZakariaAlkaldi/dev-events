@@ -1,6 +1,6 @@
 import ExploreBtn from "./components/ExploreBtn";
 import EventCard from "./components/EventCard";
-import { IEvent } from "@/database/event.model";
+import { IEvent } from "@/app/database/event.model";
 
 const BASE_URL = process.env.NEXT_PUBLIC_BASE_URL;
 

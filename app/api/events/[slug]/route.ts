@@ -1,5 +1,5 @@
 import connectDB from "@/lib/mongodb";
-import Event, { type IEvent } from "@/database/event.model";
+import Event, { type IEvent } from "@/app/database/event.model";
 import { NextResponse } from "next/server";
 
 type EventRouteParams = {
