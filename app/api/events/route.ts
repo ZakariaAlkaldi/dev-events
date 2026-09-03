@@ -34,6 +34,9 @@ export async function POST(res: NextResponse) {
         { status: 400 },
       );
 
+    const tags = JSON.parse(formData.get("tags") as string);
+    const agenda = JSON.parse(formData.get("agenda") as string);
+
     const buffer = Buffer.from(await file.arrayBuffer());
 
     const uploadResult = await imagekit.upload({
@@ -44,7 +47,11 @@ export async function POST(res: NextResponse) {
 
     event.image = uploadResult.url;
 
-    const createdEvent = await Event.create(event);
+    const createdEvent = await Event.create({
+      ...event,
+      tags: tags,
+      agenda: agenda,
+    });
 
     return NextResponse.json(
       { message: "Event Created Successfully", event: createdEvent },
