@@ -1,6 +1,6 @@
 import connectDB from "@/lib/mongodb";
 import ImageKit from "imagekit";
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 import Event from "@/app/database/event.model";
 
 const imagekit = new ImageKit({
@@ -9,7 +9,7 @@ const imagekit = new ImageKit({
   urlEndpoint: process.env.IMAGEKIT_URL_ENDPOINT!,
 });
 
-export async function POST(res: NextResponse) {
+export async function POST(res: NextRequest) {
   try {
     await connectDB();
 
